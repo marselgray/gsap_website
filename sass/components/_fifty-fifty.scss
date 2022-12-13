@@ -1,0 +1,21 @@
+.fifty-fifty {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 50px;
+
+  &.-flip {
+    flex-direction: row-reverse;
+  }
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48%;
+  }
+}
+
+
+.intro {
+  margin: 50px 0;
+}
