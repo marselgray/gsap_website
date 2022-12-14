@@ -66,9 +66,28 @@
       transition: opacity 1 ease-in;
     }
   }
+
+  &-player {
+    background-color: white;
+    position: absolute;
+    left: calc(100% - 30px);
+    top: calc(100% - 30px);
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+
+    svg {
+      height: 30px;
+      width: 30px;
+    }
+  }
 }
 
 
 .intro {
-  margin: 50px 0;
+  padding: 0 0 40px;
+
+  &-text {
+    margin: 50px 0;
+  }
 }
