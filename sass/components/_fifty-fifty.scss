@@ -1,17 +1,70 @@
 .fifty-fifty {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   margin: 0 0 50px;
 
+  @include breakpoint(medium) {
+    flex-direction: row;
+  }
+
   &.-flip {
-    flex-direction: row-reverse;
+    @include breakpoint(medium) {
+      flex-direction: row-reverse;
+    }
   }
 
   &-inner {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 48%;
+    margin: 0 0 30px;
+
+    @include breakpoint(medium) {
+      width: 48%;
+      margin: 0;
+    }
+  }
+
+  &-link {
+    display: inline-block;
+    position: relative;
+    width: max-content;
+    margin: 0 auto;
+
+    @include breakpoint(small) {
+      margin: 0;
+    }
+
+    svg {
+      transition: all 1 ease-in;
+    }
+
+    &:hover {
+
+      svg {
+        margin: 0 0 0 4px;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: -10px;
+      height: 100%;
+      width: 115%;
+      border: 1px solid #e4e2e1;
+      border-radius: 100px;
+      padding: 20px 20px 20px 20px;
+      opacity: 0;
+      transition: opacity 1 ease-in;
+    }
   }
 }
 
